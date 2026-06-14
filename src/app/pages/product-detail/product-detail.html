@@ -1,0 +1,16 @@
+<main>
+    @if (product()) {
+    <a routerLink="/products">← Back to products</a>
+    <h1>{{ product()!.name }}</h1>
+    <p class="price">{{ product()!.price | currency }}</p>
+    <p class="category">Category: {{ product()!.category }}</p>
+    <p class="stock">{{ product()!.inStock ? 'In stock' : 'Out of stock' }}</p>
+    <button
+        [disabled]="!product()!.inStock"
+        (click)="onAddToCart()">
+        Add to cart
+    </button>
+    } @else {
+    <p>Product not found. <a routerLink="/products">Go back</a></p>
+    }
+</main>

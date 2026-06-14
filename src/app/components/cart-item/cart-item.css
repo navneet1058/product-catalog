@@ -1,0 +1,4 @@
+.cart-item { display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+    .name { flex: 1; }
+    .price { font-weight: bold; }
+    button { padding: 0.25rem 0.75rem; cursor: pointer; color: red; }

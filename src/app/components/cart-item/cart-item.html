@@ -1,0 +1,5 @@
+<div class="cart-item">
+    <span class="name">{{ item.name }}</span>
+    <span class="price">{{ item.price | currency }}</span>
+    <button (click)="removeFromCart.emit(item)">Remove</button>
+</div>

@@ -1,0 +1,15 @@
+<main>
+      <h1>Your Cart</h1>
+
+      @if (productService.cart().length === 0) {
+        <p>Your cart is empty. <a routerLink="/products">Continue shopping</a></p>
+      } @else {
+        @for (item of productService.cart(); track item.id) {
+          <app-cart-item
+            [item]="item"
+            (removeFromCart)="onRemoveFromCart($event)">
+          </app-cart-item>
+        }
+        <div class="total">Total: {{ productService.cartTotal() | currency }}</div>
+      }
+    </main>

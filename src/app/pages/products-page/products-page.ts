@@ -1,13 +1,12 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { ProductCard } from '../../components/product-card/product-card';
-import { RouterLink } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-products-page',
-  imports: [CurrencyPipe, ProductCard, RouterLink],
+  imports: [ProductCard],
   templateUrl: './products-page.html',
   styleUrl: './products-page.css',
   standalone: true

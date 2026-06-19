@@ -18,4 +18,9 @@ export class ProductDetail {
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     return this.productService.products().find(product => product.id === productId);
   })
+
+  protected onAddToCart(): void {
+    const prod = this.product();
+    if(prod) this.productService.addToCart(prod);
+  }
 }

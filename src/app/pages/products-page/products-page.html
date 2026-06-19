@@ -5,15 +5,15 @@
     <div class="filter-bar">
         <label for="category">Filter by Category:</label>
         <select id="category" (change)="onCategoryChange($event)">
-        <option value="all">All Categories</option>
-        @for(category of productService.categories(); track category) {
-            <option [value]="category">{{ category }}</option>
-        }
+            <option value="all">All Categories</option>
+            @for(category of productService.categories(); track category) {
+                <option [value]="category">{{ category }}</option>
+            }
         </select>
 
         <span class="count">
             Showing {{ filteredProducts().length }} products
-        </span>
+        </span>z
     </div>
 
     <div class="product-grid">

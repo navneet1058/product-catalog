@@ -1,18 +1,7 @@
-<!-- <div class="card" [class.out-of-stock]="!product.inStock">
-    <span class="category">{{ product.category }}</span>
-    <h3>{{ product.name }}</h3>
-    <p class="price">{{ product.price | currency }}</p>
-    <p class="stock">{{ product.inStock ? 'In stock' : 'Out of stock' }}</p>
-
-    <button [disabled]="!product.inStock" (click)="addToCart.emit(product)">
-        Add to cart
-    </button>
-</div> -->
-
 <div class="card">
     <span class="category">{{ product.category }}</span>
     <h3>
-        <a [routerLink]="['/products', product.id]">{{ product.name }}</a>
+        <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
     </h3>
     <p class="price">{{ product.price | currency }}</p>
     <button

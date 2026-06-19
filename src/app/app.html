@@ -1,49 +1,8 @@
-<main>
-  <h1>Product Catalog</h1>
-
-  @if(cart().length > 0) {
-    <div class="cart-badge">
-      Cart: {{cart().length}} items(s) - ({{ cartTotal() | currency }})
-    </div>
-     @for (item of cart(); track item.id) {
-        <app-cart-item
-          [item]="item"
-          (removeFromCart)="onRemoveFromCart($event)">
-        </app-cart-item>
-      }
-  }
-
-  <!-- Filter Bar-->
-   <div class="filter-bar">
-    <label for="category">Filter by Category:</label>
-    <select id="category" (change)="onCategoryChange($event)">
-      <option value="all">All Categories</option>
-      @for(category of productService.categories(); track category) {
-        <option [value]="category">{{ category }}</option>
-      }
-    </select>
-
-    <span class="count">
-      Showing {{ filteredProducts().length }} products
-    </span>
-   </div>
-
-  <div class="product-grid">
-    @for(product of filteredProducts(); track product.id) {
-      <app-product-card
-        [product]="product"
-        (addToCart)="onAddToCart($event)"
-      ></app-product-card>
-    }
-  </div>
-  
-</main>
-
-
 <nav>
     <a routerLink="/">Home</a>
-    <a routerLink="/products">Products</a>
-    <a routerLink="/cart">Cart</a>
+    <a routerLink="/products" routerLinkActive="active">Products</a>
+    <a routerLink="/add-product" routerLinkActive="active">Add Product</a>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
 </nav>
 
 <router-outlet></router-outlet>

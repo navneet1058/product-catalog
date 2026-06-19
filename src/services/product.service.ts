@@ -25,6 +25,10 @@ export class ProductService {
         return this._products().filter(product => product.inStock);
     });
 
+    readonly cartTotal = computed(() =>
+        this._cart().reduce((sum, p) => sum + p.price, 0)
+    );
+
     addProduct(product: Product): void {
         this._products.update(products => [...products, product]);
     }

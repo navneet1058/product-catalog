@@ -8,9 +8,11 @@ import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-cart-page',
   imports: [RouterLink, CartItem, CurrencyPipe],
+  
   templateUrl: './cart-page.html',
   styleUrl: './cart-page.css',
-  standalone: true
+  
+  
 })
 export class CartPage {
   protected readonly productService = inject(ProductService);
